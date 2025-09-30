@@ -3,3 +3,4 @@ google-adk
 mcp
 litellm
 python-dotenv
+yt-dlp
