@@ -115,7 +115,8 @@ def download_video(
     """
     # Get the script's directory and set downloads path relative to it
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    downloads_path = os.path.join(script_dir, "downloads")
+    parent_dir = os.path.dirname(script_dir)
+    downloads_path = os.path.join(parent_dir, "downloads")
     
     # Download the video
     success, video_path, error = _download_video_internal(url, downloads_path)

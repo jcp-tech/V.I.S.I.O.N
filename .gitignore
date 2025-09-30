@@ -1,5 +1,7 @@
 **/*__pycache__*/
 **/.env
+**/*.mp4
+**/*.json
 **/*ignore*/
 /ignore-notes.md
 /ignore.bash

@@ -4,4 +4,4 @@ Team V.I.S.I.O.N Hackathon Repo (Google Cloud x AI Tinkerers Toronto Hackathon -
 - Create Env
 - Enter Env
 - `pip install -r requirements.txt`
-- 
+- `choco install ffmpeg`

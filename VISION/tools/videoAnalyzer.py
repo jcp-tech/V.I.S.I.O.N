@@ -320,6 +320,7 @@ def analyze_video_with_custom_prompt(
     source: str,
     analysis_prompt: str,
     source_type: str = "auto",
+    analysis_type: str = "full",
     tool_context: ToolContext = None
 ) -> Dict[str, Any]:
     """
@@ -337,7 +338,7 @@ def analyze_video_with_custom_prompt(
     return analyze_video(
         source=source,
         source_type=source_type,
-        analysis_type="full",
+        analysis_type=analysis_type,
         custom_prompt=analysis_prompt,
         tool_context=tool_context
     )
