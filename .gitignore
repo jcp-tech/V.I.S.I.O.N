@@ -1,0 +1,16 @@
+**/*__pycache__*/
+**/.env
+**/*ignore*/
+/ignore-notes.md
+/ignore.bash
+/venv-linux
+/toolbox
+/venv-windows
+/toolbox.exe
+**/serviceAccountKey.json
+**/gcp_service_account.json
+**/firebase_credentials.json
+**/firebaseConfig.json
+**/client_secret.json
+**/*.keras
+DevTools/server_scripts/
