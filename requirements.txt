@@ -7,7 +7,7 @@ litellm
 python-dotenv
 yt-dlp
 ffmpeg-python
-# streamlit>=1.31.0
-# requests>=2.31.0
-# fastapi>=0.100.0
-# uvicorn [standard]>=0.20.0
+streamlit>=1.31.0
+requests>=2.31.0
+fastapi>=0.100.0
+uvicorn[standard]>=0.20.0

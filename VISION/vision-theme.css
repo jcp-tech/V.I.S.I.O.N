@@ -1,0 +1,252 @@
+
+/* ========== V.I.S.I.O.N — Streamlit Theme (Indigo) ==========
+   Save as: vision-theme.css
+   Notes:
+   - Uses robust selectors (prefers [data-testid] over hashed class names)
+   - Accessible color contrast, clear focus states
+   - Mild radiuses & shadows for a professional look
+============================================================== */
+
+/* ---------- Color System (CSS variables) ---------- */
+:root{
+  --violet-900:#4B0082;   /* Indigo */
+  --violet-700:#5E2EA6;
+  --violet-500:#7C3AED;
+  --violet-400:#9370DB;   /* Medium Purple (brand) */
+  --violet-300:#B6A1FF;
+  --violet-100:#F3EDFF;
+
+  --ink-900:#111827;      /* Neutral text */
+  --ink-700:#374151;
+  --ink-500:#6B7280;
+
+  --bg:#FFFFFF;
+  --sidebar-bg:#F8F8FF;
+  --surface:#FFFFFF;
+  --surface-alt:#F7F7FF;
+
+  --border:#E6E6FA;
+  --border-strong:#C7C7E6;
+
+  --success-bg:#E8FFF1;
+  --success-border:#8BE0B5;
+
+  --warn-bg:#FFF8E6;
+  --warn-border:#FFD166;
+
+  --error-bg:#FFE9EA;
+  --error-border:#FF8DA1;
+
+  --info-bg:#EAF4FF;
+  --info-border:#9BD1FF;
+
+  --radius:12px;
+  --radius-lg:16px;
+  --shadow-sm:0 1px 2px rgba(17, 24, 39, .06);
+  --shadow-md:0 6px 16px rgba(17, 24, 39, .08);
+  --focus-ring:0 0 0 3px rgba(124, 58, 237, .35);
+}
+
+/* ---------- App Background & Global Text ---------- */
+html, body, .stApp{
+  background:var(--bg) !important;
+  color:var(--violet-900) !important;
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+}
+
+/* Ensure Streamlit header is transparent */
+.stApp > header{
+  background:transparent !important;
+  border:none !important;
+}
+
+/* ---------- Sidebar ---------- */
+[data-testid="stSidebar"]{
+  background:var(--sidebar-bg) !important;
+  color:var(--violet-900) !important;
+  border-right:1px solid var(--border);
+}
+
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3{
+  color:var(--violet-900) !important;
+  font-weight:700;
+}
+
+/* ---------- Typography ---------- */
+h1,h2,h3,h4,h5,h6{
+  color:var(--violet-900) !important;
+  letter-spacing:.2px;
+}
+h1{
+  text-align:center;
+  font-weight:800;
+}
+
+p, span, div, li{
+  color:var(--violet-900);
+}
+
+/* ---------- Cards / Containers (e.g., chat bubbles) ---------- */
+.stChatMessage, [data-testid="stChatMessage"]{
+  background:var(--surface) !important;
+  color:var(--violet-900) !important;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-sm);
+}
+
+/* User vs Assistant bubbles (compatible with multiple Streamlit versions) */
+.stChatMessage[data-testid="user"],
+[data-testid="stChatMessage"] [data-testid="chatAvatar"]:has(+ div [data-testid="stMarkdown"]) ~ *,
+[data-testid="stChatMessage"]:has([data-testid="stMarkdown"]) {
+  /* Fallback styles already applied above */
+}
+
+/* Explicit user/assistant backgrounds if data attributes exist */
+.stChatMessage[data-testid="user"],
+[data-testid="stChatMessage"][data-chat-role="user"]{
+  background: #F0F8FF !important; /* AliceBlue */
+}
+
+.stChatMessage[data-testid="assistant"],
+[data-testid="stChatMessage"][data-chat-role="assistant"]{
+  background: var(--surface-alt) !important;
+}
+
+/* ---------- Inputs (text, chat, textarea, select) ---------- */
+input[type="text"],
+textarea,
+[data-baseweb="input"] input,
+.stTextInput input,
+.stChatInput input,
+.stTextArea textarea,
+.stSelectbox [role="combobox"]{
+  background:var(--bg) !important;
+  color:var(--violet-900) !important;
+  border:2px solid var(--violet-400) !important;
+  border-radius:var(--radius) !important;
+  box-shadow:none !important;
+  outline:none !important;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+.stTextInput input:focus,
+.stChatInput input:focus,
+.stTextArea textarea:focus{
+  border-color:var(--violet-500) !important;
+  box-shadow:var(--focus-ring) !important;
+}
+
+/* ---------- Buttons ---------- */
+.stButton > button,
+button[kind="primary"]{
+  background:var(--violet-400) !important;
+  color:#fff !important;
+  border:none !important;
+  border-radius:var(--radius-lg) !important;
+  font-weight:700 !important;
+  padding:.6rem 1rem !important;
+  box-shadow:var(--shadow-sm);
+  transition:transform .05s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.stButton > button:hover,
+button[kind="primary"]:hover{
+  background:var(--violet-700) !important;
+  transform: translateY(-1px);
+  box-shadow:var(--shadow-md);
+}
+
+.stButton > button:focus-visible,
+button[kind="primary"]:focus-visible{
+  outline:none !important;
+  box-shadow:var(--focus-ring) !important;
+}
+
+/* Secondary buttons */
+button[kind="secondary"]{
+  color:var(--violet-900) !important;
+  border:1.5px solid var(--border-strong) !important;
+  background:var(--surface) !important;
+  border-radius:var(--radius) !important;
+}
+
+/* ---------- Alerts / Status ---------- */
+.stAlert{
+  border-radius:var(--radius);
+  border:1px solid var(--border);
+}
+
+.stAlert:has(.st-success), .st-success{
+  background:var(--success-bg) !important;
+  border-color:var(--success-border) !important;
+}
+.stAlert:has(.st-warning), .st-warning{
+  background:var(--warn-bg) !important;
+  border-color:var(--warn-border) !important;
+}
+.stAlert:has(.st-error), .st-error{
+  background:var(--error-bg) !important;
+  border-color:var(--error-border) !important;
+}
+.stAlert:has(.st-info), .st-info{
+  background:var(--info-bg) !important;
+  border-color:var(--info-border) !important;
+}
+
+/* Back-compat classes (if Streamlit uses legacy classnames) */
+.stSuccess{ background:var(--success-bg) !important; border:1px solid var(--success-border) !important; }
+.stWarning{ background:var(--warn-bg) !important;    border:1px solid var(--warn-border) !important; }
+.stError{   background:var(--error-bg) !important;   border:1px solid var(--error-border) !important; }
+.stInfo{    background:var(--info-bg) !important;    border:1px solid var(--info-border) !important; }
+
+/* ---------- Dividers, Captions, Audio ---------- */
+hr{
+  border-color:var(--violet-400) !important;
+  opacity:.5;
+}
+small, figcaption, .caption, .stCaption{
+  color:#5E4FA2 !important;
+  font-style:italic;
+}
+.stAudio, [data-testid="stAudio"]{
+  background:var(--bg) !important;
+  border-radius:var(--radius);
+  border:1px solid var(--border);
+}
+
+/* ---------- Tables & Dataframes ---------- */
+[data-testid="stDataFrame"],
+[data-testid="stTable"]{
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow-sm);
+}
+
+/* ---------- Misc spacing polish ---------- */
+.block-container{
+  padding-top:1.5rem !important;
+  padding-bottom:2rem !important;
+}
+
+/* ---------- Link Styling ---------- */
+a{
+  color:var(--violet-500) !important;
+  text-decoration:none;
+}
+a:hover{
+  text-decoration:underline;
+}
+
+/* ---------- Deploy menu & top-right icons ---------- */
+[data-testid="stToolbar"]{
+  filter:hue-rotate(-10deg) saturate(110%);
+}
+
+/* ---------- Optional: hide Streamlit footer if desired ---------- */
+/* footer {visibility:hidden;} */
