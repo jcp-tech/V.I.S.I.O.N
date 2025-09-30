@@ -1,6 +1,9 @@
 google-cloud-aiplatform[adk,agent_engines]
 google-adk
+google-cloud-speech
+google-cloud-storage
 mcp
 litellm
 python-dotenv
 yt-dlp
+ffmpeg-python
