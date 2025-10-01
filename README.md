@@ -65,7 +65,7 @@ adk web
 
 1. Start the application using one of the commands above
 2. Create a new session in the web interface
-3. **Paste your YouTube video link here**: [YouTube URL]
+3. Paste your YouTube video link here
 4. Describe what you want to analyze from the video
 5. Let V.I.S.I.O.N process and provide insights
 
@@ -83,3 +83,11 @@ VISION/
 └── custom_utils/         # Utility functions
     └── prompts/          # AI prompt templates
 ```
+
+## Hackathon Submission Video
+
+Watch our demo submission for the Google Cloud x AI Tinkerers Toronto Hackathon:
+
+[V.I.S.I.O.N Hackathon Demo](https://discord.com/channels/1422593787657457826/1422594516799586477/1422693973885194270)
+
+---
