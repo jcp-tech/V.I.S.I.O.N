@@ -55,7 +55,7 @@ V.I.S.I.O.N is an intelligent video analysis system that leverages Google Cloud 
 
 ```bash
 # Web Interface
-streamlit run app.py
+streamlit run .\VISION\app.py
 
 # ADK Web Interface
 adk web
