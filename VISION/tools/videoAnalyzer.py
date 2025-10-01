@@ -14,7 +14,7 @@ from vertexai.generative_models import GenerativeModel, Part
 import mimetypes
 
 # Import existing YouTube downloader
-from .ignore.youtubeDownloader import _download_video_internal
+from .youtubeDownloader import _download_video_internal
 
 """
 Video Analyzer Tool for ADK Agent
